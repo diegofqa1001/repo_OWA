@@ -1,10 +1,11 @@
 """
 owa_core.py — Núcleo OWA / RIM y anclas conductuales.
 
-Definiciones 1-4 y Proposición 1 del Artículo 3: operador OWA (Yager, 1988),
+Definiciones 1-4 y Proposición 1: operador OWA (Yager, 1988),
 orness, pesos RIM Q(r)=r^beta (Yager, 1996), orness exacto por suma de Abel y
-calibración beta*(alpha, n). Las anclas de orness por perfil provienen del
-Artículo 2 (taxonomía difusa validada de 8 perfiles).
+calibración beta*(alpha, n). Las anclas de orness por perfil provienen de la
+taxonomía difusa-OWA validada de 8 perfiles (ver
+A-Fuzzy-OWA-Taxonomy-of-Investor-Risk-Profiles).
 
 Licencia: MIT.
 """
@@ -12,7 +13,7 @@ from __future__ import annotations
 import numpy as np
 from scipy.optimize import brentq
 
-# Anclas de orness por perfil (Artículo 2, Tabla 5)
+# Anclas de orness por perfil (taxonomía difusa-OWA, Tabla 5)
 ORNESS_PERFIL = {
     "Guardian": 0.158, "Sentinel": 0.257, "Pragmatist": 0.503, "Analyst": 0.600,
     "Strategist": 0.647, "Adventurer": 0.693, "Innovator": 0.738, "Visionary": 0.865,
