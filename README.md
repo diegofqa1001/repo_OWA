@@ -22,6 +22,14 @@ conductuales de riesgo:
    (Acerbi, 2002) para alpha<=1/2, que anida CVaR, maximin de Wald y Hurwicz, y en
    la que el riesgo **crece** con el orness. Restaura la coherencia conductual.
 
+> **Nota de verificación (añadida 2026-08-17).** La Proposición 5 (Anexo B.6 de la
+> tesis) afirma que para alpha<=1/2 (beta>=1) la cartera óptima se obtiene resolviendo
+> un único programa lineal (mezcla de CVaR). `spectral_route.py` resuelve siempre con
+> SLSQP multi-start, sin ejercer esa tratabilidad. `spectral_lp.py` implementa el LP
+> exacto y `scripts/verify_lp_vs_slsqp.py` lo usa para verificar, en el régimen
+> coherente, que el heurístico alcanza el óptimo global que el LP certifica — cerrando
+> la brecha entre el enunciado formal y el código.
+
 **Hallazgo empírico** (backtests de ventanas rodantes 2015-2025, EE. UU. y
 Colombia, neto de costos): en el eje de **volatilidad**, la vía de criterios
 invierte el orden del perfil (conservador más volátil en 67-91% de las ventanas)
@@ -37,12 +45,14 @@ repo_OWA/
 │   ├── owa_core.py          # OWA, RIM, orness, beta*(alpha,n)  (Def. 1-4, Prop. 1)
 │   ├── criteria_route.py    # vía de criterios (resultado de inversión)
 │   ├── spectral_route.py    # PR-WOWA + barrido multi-start (alpha>1/2)
+│   ├── spectral_lp.py       # LP exacto (Prop. 5, alpha<=1/2): verificacion del optimo global
 │   ├── backtest.py          # ventanas rodantes, neto de costos, comparadores
 │   └── inference.py         # monotonía por ventana + permutación + NW + DM
 ├── scripts/
 │   ├── run_criteria.py            # reproduce la vía de criterios
 │   ├── run_spectral_multistart.py # Tabla 2 + dispersión alpha>1/2 + figura
-│   └── run_inference.py           # Tabla 1 (coherencia)
+│   ├── run_inference.py           # Tabla 1 (coherencia)
+│   └── verify_lp_vs_slsqp.py      # Prop. 5: LP vs. heurístico SLSQP multi-start
 ├── data/README.md           # universo, fuente y regla de inclusión
 ├── docs/PUBLISH.md          # cómo obtener el DOI (Zenodo)
 ├── requirements.txt
@@ -58,6 +68,7 @@ python -m pip install -r requirements.txt
 python scripts/run_spectral_multistart.py   # Tabla 2 + dispersión + figura
 python scripts/run_inference.py             # Tabla 1 (coherencia por ventana + permutación)
 python scripts/run_criteria.py              # vía de criterios (inversión)
+python scripts/verify_lp_vs_slsqp.py        # Prop. 5: verificación del óptimo global (LP vs. SLSQP)
 ```
 
 Los resultados se escriben en `results/` y las figuras en `figures/`. Los datos
