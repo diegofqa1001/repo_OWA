@@ -1,1 +1,1 @@
-"""Paquete del motor de recomendacion OWA (Articulo 3)."""
+"""Paquete del motor de recomendacion OWA."""
