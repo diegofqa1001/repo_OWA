@@ -30,6 +30,18 @@ conductuales de riesgo:
 > coherente, que el heurístico alcanza el óptimo global que el LP certifica — cerrando
 > la brecha entre el enunciado formal y el código.
 
+> **Nota de verificación (añadida 2026-08-17).** La Proposición 4 (Anexo B.7 de la
+> tesis) afirma dos casos límite del operador espectral V_beta, presentados hasta
+> ahora solo como argumento analítico: (a) cuando beta -> infinito, V_beta converge
+> al maximin de Wald (el peor escenario individual de la cartera); (b) un
+> cuantificador escalón (peso uniforme 1/m sobre los m peores escenarios) reproduce
+> exactamente el CVaR de los m peores, calculado de forma independiente con la
+> fórmula directa de Rockafellar-Uryasev. `scripts/verify_nesting.py` convierte
+> ambas afirmaciones en pruebas numéricas reproducibles: con beta=100 000 la
+> diferencia con min(R·w) es 0 hasta precisión de máquina, y el cuantificador
+> escalón coincide con el CVaR directo hasta ~3×10⁻¹⁸ para m entre 1 y 100 (S=200
+> escenarios) — cerrando la brecha entre el enunciado formal y el código.
+
 **Hallazgo empírico** (backtests de ventanas rodantes 2015-2025, EE. UU. y
 Colombia, neto de costos): en el eje de **volatilidad**, la vía de criterios
 invierte el orden del perfil (conservador más volátil en 67-91% de las ventanas)
@@ -52,7 +64,8 @@ repo_OWA/
 │   ├── run_criteria.py            # reproduce la vía de criterios
 │   ├── run_spectral_multistart.py # Tabla 2 + dispersión alpha>1/2 + figura
 │   ├── run_inference.py           # Tabla 1 (coherencia)
-│   └── verify_lp_vs_slsqp.py      # Prop. 5: LP vs. heurístico SLSQP multi-start
+│   ├── verify_lp_vs_slsqp.py      # Prop. 5: LP vs. heurístico SLSQP multi-start
+│   └── verify_nesting.py          # Prop. 4: anidamiento de CVaR y maximin de Wald
 ├── data/README.md           # universo, fuente y regla de inclusión
 ├── docs/PUBLISH.md          # cómo obtener el DOI (Zenodo)
 ├── requirements.txt
@@ -69,6 +82,7 @@ python scripts/run_spectral_multistart.py   # Tabla 2 + dispersión + figura
 python scripts/run_inference.py             # Tabla 1 (coherencia por ventana + permutación)
 python scripts/run_criteria.py              # vía de criterios (inversión)
 python scripts/verify_lp_vs_slsqp.py        # Prop. 5: verificación del óptimo global (LP vs. SLSQP)
+python scripts/verify_nesting.py            # Prop. 4: anidamiento de CVaR y maximin de Wald
 ```
 
 Los resultados se escriben en `results/` y las figuras en `figures/`. Los datos
