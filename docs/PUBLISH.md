@@ -9,7 +9,7 @@ acuñar un DOI citable con Zenodo y cómo actualizar el repositorio en el futuro
 2. Ve a https://zenodo.org/account/settings/github/ y activa (toggle ON) el
    repositorio `repo_OWA`.
 3. En GitHub, crea un release: pestaña **Releases** -> **Draft a new release**
-   -> Tag `v1.0.0` -> título "v1.0.0" -> **Publish release**.
+   -> Tag de la versión (p. ej., `v1.1.0`) -> **Publish release**.
 4. Zenodo capturará el release automáticamente y generará un **DOI**.
 5. Copia el "DOI badge" de Zenodo y pégalo en `README.md` y en
    `CITATION.cff` (campo `repository-code` y un nuevo campo `doi:`).
@@ -20,7 +20,7 @@ En la sección Declaraciones del manuscrito:
 
 ```
 Código y datos: https://github.com/diegofqa1001/repo_OWA
-DOI: 10.5281/zenodo.XXXXXXX
+DOI de concepto (todas las versiones): 10.5281/zenodo.20695172; DOI de la versión 1.0.0: 10.5281/zenodo.20695173. Zenodo acuña un DOI nuevo para cada release.
 ```
 
 ## Actualizar el repositorio desde tu computador (opcional)
