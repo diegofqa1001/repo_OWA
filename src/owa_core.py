@@ -13,11 +13,21 @@ from __future__ import annotations
 import numpy as np
 from scipy.optimize import brentq
 
-# Anclas de orness por perfil (taxonomía difusa-OWA, Tabla 5)
-ORNESS_PERFIL = {
+# Anclas de orness por perfil.
+# Parametrización canónica (tesis §3.6): octiles de una latente normal estándar,
+# orness_k = (2k-1)/16, k = 1..8.
+ORNESS_OCTILES = {
+    "Guardian": 0.0625, "Sentinel": 0.1875, "Pragmatist": 0.3125, "Analyst": 0.4375,
+    "Strategist": 0.5625, "Adventurer": 0.6875, "Innovator": 0.8125, "Visionary": 0.9375,
+}
+# Parametrización histórica v1 (taxonomía difusa-OWA, Tabla 3.4 de la tesis),
+# conservada como análisis de sensibilidad.
+ORNESS_V1 = {
     "Guardian": 0.158, "Sentinel": 0.257, "Pragmatist": 0.503, "Analyst": 0.600,
     "Strategist": 0.647, "Adventurer": 0.693, "Innovator": 0.738, "Visionary": 0.865,
 }
+ANCLAS = {"octiles": ORNESS_OCTILES, "v1": ORNESS_V1}
+ORNESS_PERFIL = ORNESS_OCTILES
 PERFILES = list(ORNESS_PERFIL)
 
 

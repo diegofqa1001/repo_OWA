@@ -2,7 +2,7 @@
 criteria_route.py — Vía de criterios (base de la industria; resultado de inversión).
 
 Aplica el orness sobre los m=4 criterios financieros normalizados de cada activo
-(Def. 5). Es la integral de Choquet respecto a una capacidad simétrica: mide
+(tesis, §4.2.1). Es la integral de Choquet respecto a una capacidad simétrica: mide
 exigencia multicriterio (AND/OR), no aversión al riesgo (Prop. 2). La selección
 top-k y la asignación se gobiernan por el orness.
 
