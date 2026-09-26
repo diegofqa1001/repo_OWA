@@ -1,0 +1,444 @@
+{
+ "choquet_capacidad_n4": {
+  "beta=4.0": {
+   "orness": 0.12760416666666666,
+   "supermodular": true,
+   "submodular": false
+  },
+  "beta=1.0": {
+   "orness": 0.5,
+   "supermodular": true,
+   "submodular": true
+  },
+  "beta=0.25": {
+   "orness": 0.8262026851807872,
+   "supermodular": false,
+   "submodular": true
+  }
+ },
+ "lorenz": {
+  "psi_creciente_mejor_primero": true,
+  "phi_no_creciente_peor_primero": true,
+  "lambda_no_negativos": true,
+  "suma_lambda": 1.0,
+  "V_beta": -0.009561656050712538,
+  "suma_lambda_CVaR": 0.009561656050712537,
+  "V_mas_mezcla": -1.734723475976807e-18
+ },
+ "anidamientos": {
+  "rampa_V_mas_CVaR": 0.0,
+  "wald_V_menos_min": 0.0,
+  "limite_beta_grande_V_menos_min": 0.0,
+  "hurwicz_orness": 0.3,
+  "hurwicz_h": 0.3,
+  "hurwicz_V_menos_formula": 0.0,
+  "min_psi_RIM_para_beta_0.2_1_5_50": [
+   0.005050763379468082,
+   0.02499999999999991,
+   9.765625000000002e-09,
+   7.88860905221014e-81
+  ]
+ },
+ "prop6": {
+  "var_X": 2.5042620153068348e-05,
+  "var_Y": 0.00010017048061227339,
+  "media_X": -4.22002630834189e-06,
+  "media_Y": 0.00019155994738331614,
+  "CVaR05_X": 0.01032909825322682,
+  "CVaR05_Y": 0.02045819650645364
+ },
+ "lp_constante_por_tramos": {
+  "0.05": [
+   0.1005,
+   0.2237,
+   0.0017,
+   0.1376,
+   0.2366,
+   0.3
+  ],
+  "0.2": [
+   0.1166,
+   0.2461,
+   0.1386,
+   0.0,
+   0.1987,
+   0.3
+  ],
+  "0.3": [
+   0.1043,
+   0.2245,
+   0.147,
+   0.0,
+   0.2242,
+   0.3
+  ],
+  "0.4": [
+   0.0,
+   0.273,
+   0.1695,
+   0.0,
+   0.2575,
+   0.3
+  ],
+  "0.45": [
+   0.0,
+   0.3,
+   0.1,
+   0.0,
+   0.3,
+   0.3
+  ],
+  "0.5": [
+   0.0,
+   0.3,
+   0.1,
+   0.0,
+   0.3,
+   0.3
+  ]
+ },
+ "octiles_invariancia": {
+  "normal": [
+   0.0625,
+   0.1875,
+   0.3125,
+   0.4375,
+   0.5625,
+   0.6875,
+   0.8125,
+   0.9375
+  ],
+  "logistica": [
+   0.0625,
+   0.1875,
+   0.3125,
+   0.4375,
+   0.5625,
+   0.6875,
+   0.8125,
+   0.9375
+  ],
+  "t3": [
+   0.06249999999999984,
+   0.18750000000000008,
+   0.3125000000000001,
+   0.4375,
+   0.5625,
+   0.6874999999999999,
+   0.8124999999999999,
+   0.9375000000000001
+  ],
+  "uniforme": [
+   0.0625,
+   0.1875,
+   0.3125,
+   0.4375,
+   0.5625,
+   0.6875,
+   0.8125,
+   0.9375
+  ]
+ },
+ "beta_por_perfil": {
+  "v1": {
+   "Guardian": {
+    "2": 2.662,
+    "4": 3.431,
+    "7": 3.998,
+    "252": 5.275
+   },
+   "Sentinel": {
+    "2": 1.96,
+    "4": 2.269,
+    "7": 2.478,
+    "252": 2.877
+   },
+   "Pragmatist": {
+    "2": 0.991,
+    "4": 0.99,
+    "7": 0.989,
+    "252": 0.988
+   },
+   "Analyst": {
+    "2": 0.737,
+    "4": 0.71,
+    "7": 0.695,
+    "252": 0.668
+   },
+   "Strategist": {
+    "2": 0.628,
+    "4": 0.597,
+    "7": 0.579,
+    "252": 0.547
+   },
+   "Adventurer": {
+    "2": 0.529,
+    "4": 0.496,
+    "7": 0.478,
+    "252": 0.444
+   },
+   "Innovator": {
+    "2": 0.438,
+    "4": 0.406,
+    "7": 0.388,
+    "252": 0.356
+   },
+   "Visionary": {
+    "2": 0.209,
+    "4": 0.188,
+    "7": 0.177,
+    "252": 0.157
+   }
+  },
+  "octiles": {
+   "Guardian": {
+    "2": 4.0,
+    "4": 6.104,
+    "7": 7.956,
+    "252": 14.572
+   },
+   "Sentinel": {
+    "2": 2.415,
+    "4": 3.0,
+    "7": 3.418,
+    "252": 4.298
+   },
+   "Pragmatist": {
+    "2": 1.678,
+    "4": 1.859,
+    "7": 1.977,
+    "252": 2.192
+   },
+   "Analyst": {
+    "2": 1.193,
+    "4": 1.227,
+    "7": 1.248,
+    "252": 1.284
+   },
+   "Strategist": {
+    "2": 0.83,
+    "4": 0.81,
+    "7": 0.799,
+    "252": 0.779
+   },
+   "Adventurer": {
+    "2": 0.541,
+    "4": 0.507,
+    "7": 0.489,
+    "252": 0.456
+   },
+   "Innovator": {
+    "2": 0.3,
+    "4": 0.273,
+    "7": 0.258,
+    "252": 0.232
+   },
+   "Visionary": {
+    "2": 0.093,
+    "4": 0.083,
+    "7": 0.077,
+    "252": 0.067
+   }
+  }
+ },
+ "lema1_monotonia": true,
+ "contraejemplo_h": [
+  {
+   "par": "v1",
+   "perfil": "Guardian",
+   "h": 0.158,
+   "sA_menos_sB": 0.0684,
+   "formula": 0.0684,
+   "elige": "A"
+  },
+  {
+   "par": "v1",
+   "perfil": "Sentinel",
+   "h": 0.257,
+   "sA_menos_sB": 0.0486,
+   "formula": 0.0486,
+   "elige": "A"
+  },
+  {
+   "par": "v1",
+   "perfil": "Pragmatist",
+   "h": 0.503,
+   "sA_menos_sB": -0.0006,
+   "formula": -0.0006,
+   "elige": "B"
+  },
+  {
+   "par": "v1",
+   "perfil": "Analyst",
+   "h": 0.6,
+   "sA_menos_sB": -0.02,
+   "formula": -0.02,
+   "elige": "B"
+  },
+  {
+   "par": "v1",
+   "perfil": "Strategist",
+   "h": 0.647,
+   "sA_menos_sB": -0.0294,
+   "formula": -0.0294,
+   "elige": "B"
+  },
+  {
+   "par": "v1",
+   "perfil": "Adventurer",
+   "h": 0.693,
+   "sA_menos_sB": -0.0386,
+   "formula": -0.0386,
+   "elige": "B"
+  },
+  {
+   "par": "v1",
+   "perfil": "Innovator",
+   "h": 0.738,
+   "sA_menos_sB": -0.0476,
+   "formula": -0.0476,
+   "elige": "B"
+  },
+  {
+   "par": "v1",
+   "perfil": "Visionary",
+   "h": 0.865,
+   "sA_menos_sB": -0.073,
+   "formula": -0.073,
+   "elige": "B"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Guardian",
+   "h": 0.0625,
+   "sA_menos_sB": 0.0875,
+   "formula": 0.0875,
+   "elige": "A"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Sentinel",
+   "h": 0.1875,
+   "sA_menos_sB": 0.0625,
+   "formula": 0.0625,
+   "elige": "A"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Pragmatist",
+   "h": 0.3125,
+   "sA_menos_sB": 0.0375,
+   "formula": 0.0375,
+   "elige": "A"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Analyst",
+   "h": 0.4375,
+   "sA_menos_sB": 0.0125,
+   "formula": 0.0125,
+   "elige": "A"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Strategist",
+   "h": 0.5625,
+   "sA_menos_sB": -0.0125,
+   "formula": -0.0125,
+   "elige": "B"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Adventurer",
+   "h": 0.6875,
+   "sA_menos_sB": -0.0375,
+   "formula": -0.0375,
+   "elige": "B"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Innovator",
+   "h": 0.8125,
+   "sA_menos_sB": -0.0625,
+   "formula": -0.0625,
+   "elige": "B"
+  },
+  {
+   "par": "octiles",
+   "perfil": "Visionary",
+   "h": 0.9375,
+   "sA_menos_sB": -0.0875,
+   "formula": -0.0875,
+   "elige": "B"
+  }
+ ],
+ "difuso": {
+  "mu(0,42)": {
+   "VL": 0.0,
+   "L": 0.0,
+   "M": 0.7999999999999998,
+   "H": 0.0,
+   "VH": 0.0
+  },
+  "mu(0,35)": {
+   "VL": 0.0,
+   "L": 0.3333333333333336,
+   "M": 0.3333333333333332,
+   "H": 0.0,
+   "VH": 0.0
+  },
+  "COG": {
+   "VL": 0.093,
+   "L": 0.25,
+   "M": 0.5,
+   "H": 0.75,
+   "VH": 0.907
+  }
+ },
+ "F_beta": {
+  "ejemplo": {
+   "Guardian": 0.395,
+   "Sentinel": 0.454,
+   "Pragmatist": 0.602,
+   "Analyst": 0.66,
+   "Strategist": 0.688,
+   "Adventurer": 0.716,
+   "Innovator": 0.743,
+   "Visionary": 0.819
+  },
+  "no_creciente_en_beta": true
+ },
+ "factibilidad_tope": {
+  "N_min_cap_0.30": 4
+ },
+ "orness_efectivo": {
+  "lambda": 0.85,
+  "alpha_min": 0.12,
+  "s0": 0.55,
+  "nunca_supera_nominal": true,
+  "igual_sin_activacion": true,
+  "estrictamente_creciente_en_alpha": true,
+  "pendiente_minima": 0.14999999999998334,
+  "cota_inferior_ok": true,
+  "ejemplos_activacion_1": {
+   "Guardian": 0.0625,
+   "Sentinel": 0.1301,
+   "Pragmatist": 0.1489,
+   "Analyst": 0.1676,
+   "Strategist": 0.1864,
+   "Adventurer": 0.2051,
+   "Innovator": 0.2239,
+   "Visionary": 0.2426
+  }
+ },
+ "ejemplo_4_1_4": {
+  "alpha_octiles": 0.2375,
+  "beta_S252": 3.192213356748283,
+  "beta_asintotico": 3.2105263157894735,
+  "alpha_v1": 0.35540000000000005,
+  "beta_v1_S252": 1.8092141588806059
+ },
+ "rampa_no_entera": {
+  "V_mas_ES": 0.0
+ }
+}
