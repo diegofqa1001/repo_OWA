@@ -1,0 +1,33 @@
+{
+ "mercado": "CO",
+ "anclas": "v1",
+ "activos": [
+  "ECOPETROL.CL",
+  "GRUPOSURA.CL",
+  "PFGRUPSURA.CL",
+  "ISA.CL",
+  "CEMARGOS.CL",
+  "PFCEMARGOS.CL",
+  "GRUPOARGOS.CL",
+  "PFGRUPOARG.CL",
+  "BOGOTA.CL",
+  "PFAVAL.CL",
+  "CELSIA.CL",
+  "CORFICOLCF.CL",
+  "ETB.CL",
+  "NUTRESA.CL",
+  "TERPEL.CL",
+  "GEB.CL",
+  "PROMIGAS.CL"
+ ],
+ "n_dias": 2298,
+ "inicio": "2015-01-02",
+ "fin": "2024-12-30",
+ "n_ventanas": 97,
+ "lookback": 252,
+ "step": 21,
+ "costo_pb": 10.0,
+ "tope": 0.3,
+ "arranques": 40,
+ "semilla": 42
+}
