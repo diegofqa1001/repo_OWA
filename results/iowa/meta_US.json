@@ -1,0 +1,9 @@
+{
+ "mercado": "US",
+ "lambda": 0.85,
+ "alpha_min": 0.12,
+ "umbral_s0": 0.55,
+ "anclas": "octiles",
+ "arranques": 40,
+ "semilla": 42
+}

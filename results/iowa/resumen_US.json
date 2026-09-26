@@ -1,0 +1,48 @@
+{
+ "mercado": "US",
+ "n_ventanas": 107,
+ "n_activas": 38,
+ "frac_activas": 0.35514018691588783,
+ "regimen_en_rebalanceo": {
+  "calma": 0.3458,
+  "normal": 0.2991,
+  "estres": 0.271,
+  "crisis": 0.0841
+ },
+ "activas": {
+  "n": 38,
+  "rho_adaptativa": 0.7324561403508771,
+  "t_adaptativa": 10.042839636346969,
+  "rho_estatica": 0.7577468327436877,
+  "t_estatica": 20.954714194354548,
+  "dif_rho": -0.025290692392810503,
+  "t_dif_rho": -0.4586563393776637,
+  "reduccion_vol_pp": 2.724315509188011,
+  "DM_vol": 4.578487923386121,
+  "p_vol_unilateral": 2.572389755454122e-05,
+  "reduccion_caida_pp": 0.4994595335539447,
+  "DM_caida": 4.323090025082149,
+  "p_caida_unilateral": 5.572871074521451e-05,
+  "costo_rentabilidad_pp": 4.687510107111964,
+  "p_ret_bilateral": 0.12419229162931966,
+  "reduccion_media_orness": 0.09894505749190005
+ },
+ "todas": {
+  "n": 107,
+  "rho_adaptativa": 0.7572745788064743,
+  "t_adaptativa": 27.342978878263505,
+  "rho_estatica": 0.7662563200300893,
+  "t_estatica": 49.85863721960674,
+  "dif_rho": -0.00898174122361495,
+  "t_dif_rho": -0.4738168869652408,
+  "reduccion_vol_pp": 0.9665964034034653,
+  "DM_vol": 3.1166822428294445,
+  "p_vol_unilateral": 0.0011770492397754466,
+  "reduccion_caida_pp": 0.17737815210327001,
+  "DM_caida": 3.380143660302812,
+  "p_caida_unilateral": 0.0005075144262086058,
+  "costo_rentabilidad_pp": 1.6894692928993058,
+  "p_ret_bilateral": 0.1477798900508415,
+  "reduccion_media_orness": 0.03513936621207665
+ }
+}
