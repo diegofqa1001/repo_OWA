@@ -1,10 +1,10 @@
 """
-verify_nesting.py — Verificacion numerica del Hallazgo 4 (Proposicion 4,
-Anexo B.7 de la tesis): anidamiento de CVaR y del maximin de Wald como
-casos limite del operador espectral V_beta.
+verify_nesting.py — Verificacion numerica de la Proposicion 4 (Anexo B.5 de
+la tesis): el CVaR como caso particular y el maximin de Wald como limite del
+operador espectral V_beta.
 
 La Proposicion 4 afirma dos casos limite del cuantificador RIM Q(P)=P^beta
-sobre los resultados ordenados de la cartera (Definicion 6):
+sobre los resultados ordenados de la cartera (funcional PR-WOWA, §4.3.1):
 
   (a) beta -> infinito: V_beta converge al maximin de Wald, es decir, al
       peor escenario individual de la cartera (min(R@w)). Q(P)=P^beta
@@ -17,10 +17,8 @@ sobre los resultados ordenados de la cartera (Definicion 6):
       INDEPENDIENTE con la formula directa: la media aritmetica de los m
       retornos mas bajos de la cartera.
 
-Ambas afirmaciones se presentaban en el Anexo B solo como argumento
-analitico/textual, sin verificacion computacional en el repositorio; este
-script las convierte en pruebas numericas reproducibles, en linea con el
-resto del programa (ver tambien spectral_lp.py, Proposicion 5, que usa la
+El Anexo B.5 las demuestra analiticamente; este script las verifica
+numericamente, en linea con el resto del programa (ver tambien spectral_lp.py, Proposicion 5, que usa la
 misma formula de Rockafellar-Uryasev para el LP del regimen coherente).
 
 Uso:  python scripts/verify_nesting.py
