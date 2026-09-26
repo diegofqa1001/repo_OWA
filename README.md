@@ -1,94 +1,76 @@
-# Motor de recomendación OWA adaptativo al perfil conductual
+# Motor de recomendación OWA adaptativo al perfil conductual — v1.1.0
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20695173.svg)](https://doi.org/10.5281/zenodo.20695173)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20695172.svg)](https://doi.org/10.5281/zenodo.20695172)
 
-Código y datos reproducibles de la comparación entre dos operadores OWA
-para recomendación de carteras coherente con el perfil conductual de riesgo.
+Código, datos congelados y resultados del **Capítulo 5** (validación empírica de las dos
+vías OWA) y del **§8.4** (componente adaptativo inducido por régimen) de la tesis doctoral
+*Modelo adaptativo de recomendación para el diseño de portafolios de inversión en renta
+variable bajo incertidumbre* (Universidad Nacional de Colombia, Sede Manizales).
 
-## Resumen del aporte
+## Qué contiene
 
-Se comparan **dos operadores que consumen el mismo grado attitudinal (orness)**
-derivado endógenamente de una taxonomía difusa validada de ocho perfiles
-conductuales de riesgo:
+Dos operadores consumen el mismo grado actitudinal (orness) de ocho perfiles conductuales:
 
-1. **Vía de criterios** (base de la industria): aplica el orness sobre los
-   criterios multicriterio de cada activo. Se demuestra (Prop. 2 + Contraejemplo 1)
-   que mide **exigencia multicriterio (AND/OR), no aversión al riesgo**, y puede
-   **invertir** al inversor (el conservador recibe la cartera más volátil).
-2. **Vía espectral PR-WOWA** (corrección): aplica el orness sobre los resultados
-   **ordenados de la cartera**. Es una medida de riesgo espectral coherente
-   (Acerbi, 2002) para alpha<=1/2, que anida CVaR, maximin de Wald y Hurwicz, y en
-   la que el riesgo **crece** con el orness. Restaura la coherencia conductual.
+1. **Vía de criterios** (`src/criteria_route.py`): aplica el orness sobre cuatro criterios
+   normalizados de cada activo (rentabilidad, baja volatilidad, baja caída, liquidez) y
+   selecciona los ocho mejores puntajes. Mide exigencia multicriterio (Proposición 2) y puede
+   invertir el orden de riesgo (Contraejemplo 1).
+2. **Vía espectral PR-WOWA** (`src/spectral_route.py`): aplica el orness sobre los rendimientos
+   ordenados de la cartera. Para orness ≤ 1/2 es una medida de riesgo espectral coherente
+   (Acerbi, 2002), cóncava y resoluble como LP (`src/spectral_lp.py`).
+3. **Componente adaptativo inducido por régimen** (`src/regime.py`): el índice de estrés
+   VIX/EPU (EPU con rezago de publicación) reduce el orness del perfil por encima del umbral
+   s₀ = 0,55: α_eff = α − λ·a(t)·max(0, α − α_min), λ = 0,85, α_min = 0,12.
 
-> **Nota de verificación (añadida 2026-08-17).** La Proposición 5 (Anexo B.6 de la
-> tesis) afirma que para alpha<=1/2 (beta>=1) la cartera óptima se obtiene resolviendo
-> un único programa lineal (mezcla de CVaR). `spectral_route.py` resuelve siempre con
-> SLSQP multi-start, sin ejercer esa tratabilidad. `spectral_lp.py` implementa el LP
-> exacto y `scripts/verify_lp_vs_slsqp.py` lo usa para verificar, en el régimen
-> coherente, que el heurístico alcanza el óptimo global que el LP certifica — cerrando
-> la brecha entre el enunciado formal y el código.
+Anclas de orness canónicas: octiles (2k − 1)/16. Las anclas históricas v1 (0,158–0,865) se
+ejecutan como análisis de sensibilidad.
 
-> **Nota de verificación (añadida 2026-08-17).** La Proposición 4 (Anexo B.7 de la
-> tesis) afirma dos casos límite del operador espectral V_beta, presentados hasta
-> ahora solo como argumento analítico: (a) cuando beta -> infinito, V_beta converge
-> al maximin de Wald (el peor escenario individual de la cartera); (b) un
-> cuantificador escalón (peso uniforme 1/m sobre los m peores escenarios) reproduce
-> exactamente el CVaR de los m peores, calculado de forma independiente con la
-> fórmula directa de Rockafellar-Uryasev. `scripts/verify_nesting.py` convierte
-> ambas afirmaciones en pruebas numéricas reproducibles: con beta=100 000 la
-> diferencia con min(R·w) es 0 hasta precisión de máquina, y el cuantificador
-> escalón coincide con el CVaR directo hasta ~3×10⁻¹⁸ para m entre 1 y 100 (S=200
-> escenarios) — cerrando la brecha entre el enunciado formal y el código.
+## Resultados principales (anclas por octiles, neto de 10 pb por rotación, 2015–2024)
 
-**Hallazgo empírico** (backtests de ventanas rodantes 2015-2025, EE. UU. y
-Colombia, neto de costos): en el eje de **volatilidad**, la vía de criterios
-invierte el orden del perfil (conservador más volátil en 67-91% de las ventanas)
-y la vía espectral lo restaura (riesgo creciente con el orness en 82-100% de las
-ventanas). El criterio de éxito es la **consecuencia conductual (suitability)**,
-no la maximización de utilidad.
+| Mercado | Vía | ρ̄ Spearman por ventana (t NW) | % ventanas coherentes | ρ permutación exacta (p) |
+|---|---|---|---|---|
+| EE. UU. (107 ventanas) | Criterios | −0,583 (−11,0) | 11,2 % | −0,929 (0,002) |
+| EE. UU. | Espectral | +0,766 (49,9) | 99,1 % | +0,762 (0,037) |
+| Colombia (97 ventanas) | Criterios | −0,211 (−3,0) | 33,0 % | −0,905 (0,005) |
+| Colombia | Espectral | +0,655 (16,7) | 90,7 % | +0,833 (0,015) |
 
-## Estructura
-
-```
-repo_OWA/
-├── src/
-│   ├── owa_core.py          # OWA, RIM, orness, beta*(alpha,n)  (Def. 1-4, Prop. 1)
-│   ├── criteria_route.py    # vía de criterios (resultado de inversión)
-│   ├── spectral_route.py    # PR-WOWA + barrido multi-start (alpha>1/2)
-│   ├── spectral_lp.py       # LP exacto (Prop. 5, alpha<=1/2): verificacion del optimo global
-│   ├── backtest.py          # ventanas rodantes, neto de costos, comparadores
-│   └── inference.py         # monotonía por ventana + permutación + NW + DM
-├── scripts/
-│   ├── run_criteria.py            # reproduce la vía de criterios
-│   ├── run_spectral_multistart.py # Tabla 2 + dispersión alpha>1/2 + figura
-│   ├── run_inference.py           # Tabla 1 (coherencia)
-│   ├── verify_lp_vs_slsqp.py      # Prop. 5: LP vs. heurístico SLSQP multi-start
-│   └── verify_nesting.py          # Prop. 4: anidamiento de CVaR y maximin de Wald
-├── data/README.md           # universo, fuente y regla de inclusión
-├── docs/PUBLISH.md          # cómo obtener el DOI (Zenodo)
-├── requirements.txt
-├── CITATION.cff
-├── LICENSE                  # MIT (código)
-└── LICENSE-CONTENT.md       # CC-BY-4.0 (texto y figuras)
-```
+Componente adaptativo, ventanas con estrés activo: reducción media de volatilidad de
+2,72 pp (EE. UU., p < 0,001) y 2,08 pp (Colombia, p = 0,003), sin pérdida significativa de
+coherencia. Tablas completas en `results/cap5/` y `results/iowa/`.
 
 ## Reproducir
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/run_spectral_multistart.py   # Tabla 2 + dispersión + figura
-python scripts/run_inference.py             # Tabla 1 (coherencia por ventana + permutación)
-python scripts/run_criteria.py              # vía de criterios (inversión)
-python scripts/verify_lp_vs_slsqp.py        # Prop. 5: verificación del óptimo global (LP vs. SLSQP)
-python scripts/verify_nesting.py            # Prop. 4: anidamiento de CVaR y maximin de Wald
+pytest -q                                   # pruebas del núcleo
+python scripts/run_cap5.py                  # Cap. 5: 2 mercados x 2 anclas (≈ 1 h por mercado)
+python scripts/analyze_cap5.py              # Tablas 5.1-5.3 y Figuras 5.1-5.3
+python scripts/analyze_cap5_complementos.py # coherencia en rentabilidad y caída; concentración espectral
+python scripts/run_iowa.py                  # §8.4: corrida adaptativa (≈ 40 min por mercado)
+python scripts/analyze_iowa.py              # pruebas del §8.4 y figura del orness efectivo
+python scripts/fig_iowa.py                  # Figuras 4.2 y 8.2-8.4 y sus descriptivos
+python scripts/verify_lp_vs_slsqp.py        # Prop. 5: LP exacto frente a SLSQP
+python scripts/verify_lp_vs_slsqp_ventanas.py
+python scripts/verify_nesting.py            # Prop. 4: anidamientos
+python scripts/verify_propiedades_cap4.py   # propiedades formales del Cap. 4
 ```
 
-Los resultados se escriben en `results/` y las figuras en `figures/`. Los datos
-se descargan con `yfinance` (ver `data/README.md`).
+Semilla 42; 8 arranques en el régimen cóncavo (todo óptimo local es global) y 40 en el no
+cóncavo. Los resultados publicados en `results/` son los de referencia de la tesis.
 
-## Cita
+## Cambios de la v1.1.0 respecto de la v1.0.0
 
-Si usa este software o sus resultados, cite el repositorio (ver `CITATION.cff`).
-DOI (Zenodo): **10.5281/zenodo.20695173** — https://doi.org/10.5281/zenodo.20695173
+- Corrección: los guiones de la v1.0.0 pasaban niveles de precio al optimizador espectral;
+  ahora recibe rendimientos.
+- Todas las estrategias pasan por `backtest()`, con costos de 10 pb por rotación y
+  comparadores 1/N y Markowitz (máxima razón de Sharpe) implementados.
+- Datos congelados en un snapshot versionado con SHA-256; ningún guion descarga en ejecución.
+- Resultados y figuras versionados (antes excluidos por `.gitignore`).
+- Permutación exacta sobre 8! reasignaciones y Diebold-Mariano con corrección HLN.
+- Componente adaptativo implementado sobre la vía espectral.
+
+## Licencia y cita
+
+Código MIT; texto, figuras y resultados CC BY 4.0. Cite el repositorio con `CITATION.cff`.
