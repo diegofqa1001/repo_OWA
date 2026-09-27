@@ -11,10 +11,10 @@ authors:
   - family-names: "León-Castro"
     given-names: "Ernesto"
     affiliation: "Universidad Católica de la Santísima Concepción, Concepción, Chile"
-version: "1.1.0"
-date-released: "2026-09-26"
+version: "1.2.0"
+date-released: "2026-09-27"
 license: MIT
-doi: 10.5281/zenodo.20695172  # DOI de concepto (todas las versiones); v1.1.0 = 10.5281/zenodo.22981781; v1.0.0 = 10.5281/zenodo.20695173
+doi: 10.5281/zenodo.20695172  # DOI de concepto (resuelve a la versión más reciente)
 repository-code: "https://github.com/diegofqa1001/repo_OWA"
 keywords:
   - behavioral finance

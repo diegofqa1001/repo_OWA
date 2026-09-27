@@ -1,4 +1,4 @@
-# Motor de recomendación OWA adaptativo al perfil conductual — v1.1.0
+# Motor de recomendación OWA adaptativo al perfil conductual — v1.2.0
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT.md)
@@ -64,6 +64,10 @@ python scripts/verify_propiedades_cap4.py   # propiedades formales del Cap. 4
 Semilla 42; 8 arranques en el régimen cóncavo (todo óptimo local es global) y 40 en el no
 cóncavo. Los resultados publicados en `results/` son los de referencia de la tesis.
 
+## Cambios de la v1.2.0
+
+- Universo colombiano completo: Bancolombia se incorpora mediante PFCIBEST.CL, símbolo vigente de su acción preferencial tras la reorganización como Grupo Cibest (`scripts/incorporar_bancolombia.py`); se repiten las corridas colombianas del Cap. 5 y del componente adaptativo.
+
 ## Cambios de la v1.1.0 respecto de la v1.0.0
 
 - Corrección: los guiones de la v1.0.0 pasaban niveles de precio al optimizador espectral;
@@ -77,6 +81,6 @@ cóncavo. Los resultados publicados en `results/` son los de referencia de la te
 
 ## Licencia y cita
 
-DOI de la versión 1.1.0: [10.5281/zenodo.22981781](https://doi.org/10.5281/zenodo.22981781). DOI de concepto (todas las versiones): [10.5281/zenodo.20695172](https://doi.org/10.5281/zenodo.20695172).
+DOI de concepto (resuelve a la versión más reciente): [10.5281/zenodo.20695172](https://doi.org/10.5281/zenodo.20695172).
 
 Código MIT; texto, figuras y resultados CC BY 4.0. Cite el repositorio con `CITATION.cff`.
