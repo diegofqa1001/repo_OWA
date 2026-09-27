@@ -30,9 +30,9 @@
  },
  "CO": {
   "n_ventanas": 97,
-  "n_activas": 32,
+  "n_activas": 31,
   "regimen_ventanas_activas": {
-   "estres": 24,
+   "estres": 23,
    "crisis": 8
   },
   "activacion_max": 0.7845792289293724,
@@ -48,13 +48,13 @@
   },
   "orness_efectivo_activas_min_max_sin_guardian": [
    0.1424847667401772,
-   0.929447415342154
+   0.9194763432523916
   ],
-  "rango_orness_efectivo_medio_activas": 0.662135447174386,
+  "rango_orness_efectivo_medio_activas": 0.6504203578196543,
   "rango_orness_nominal": 0.875,
-  "sd_transversal_vol_activas_estatica": 0.06468717613059574,
-  "sd_transversal_vol_activas_adaptativa": 0.051766490547121055,
-  "vol_media_activas_estatica_pct": 21.39700626357711,
-  "vol_media_activas_adaptativa_pct": 19.317348080586793
+  "sd_transversal_vol_activas_estatica": 0.06764083802049516,
+  "sd_transversal_vol_activas_adaptativa": 0.05241769809429203,
+  "vol_media_activas_estatica_pct": 22.309288160623947,
+  "vol_media_activas_adaptativa_pct": 19.922706244762338
  }
 }
