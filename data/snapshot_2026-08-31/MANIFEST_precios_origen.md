@@ -25,9 +25,13 @@ GRUPOARGOS.CL, PFGRUPOARG.CL, BOGOTA.CL, PFAVAL.CL, CELSIA.CL, CORFICOLCF.CL,
 ETB.CL, NUTRESA.CL, TERPEL.CL, GEB.CL, PROMIGAS.CL.
 
 **Descartado (1):** `PFBCOLOM.CL` (Bancolombia preferencial) — Yahoo Finance
-reporta "No data found, symbol may be delisted" para todo el periodo. Esta
-misma exclusión ya estaba documentada de forma anticipada en el cuerpo de la
-tesis (nota de la §5, "descartado PFBCOLOM / BCOLOMBIA.CL por deslistamiento").
+reporta "No data found, symbol may be delisted" para todo el periodo. El
+emisor no se deslistó: tras su reorganización como Grupo Cibest, la fuente
+publica su historia desde 2015 bajo los símbolos vigentes `CIBEST.CL` y
+`PFCIBEST.CL`, que este universo no solicitó (diagnóstico en
+validacion-oe4, `scripts/diag_simbolos_bancolombia.py` y
+`results/diag_simbolos_bancolombia.csv`). La exclusión es una limitación del
+universo; las cifras se conservan sin rehacer las corridas.
 
 **Nota de cobertura:** `PFCEMARGOS.CL` (Cementos Argos, acción preferencial)
 tiene datos solo hasta 2024-09-20 (≈97 % de cobertura) por una reorganización
