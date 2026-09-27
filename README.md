@@ -73,4 +73,6 @@ cóncavo. Los resultados publicados en `results/` son los de referencia de la te
 
 ## Licencia y cita
 
+DOI de la versión 1.1.0: [10.5281/zenodo.22981781](https://doi.org/10.5281/zenodo.22981781). DOI de concepto (todas las versiones): [10.5281/zenodo.20695172](https://doi.org/10.5281/zenodo.20695172).
+
 Código MIT; texto, figuras y resultados CC BY 4.0. Cite el repositorio con `CITATION.cff`.
