@@ -27,7 +27,7 @@ Dos operadores consumen el mismo grado actitudinal (orness) de ocho perfiles con
 Anclas de orness canónicas: octiles (2k − 1)/16. Las anclas históricas v1 (0,158–0,865) se
 ejecutan como análisis de sensibilidad.
 
-## Resultados principales (anclas por octiles, neto de 10 pb por rotación, 2015–2024)
+## Resultados principales (anclas por octiles, neto de 10 pb por rotación; datos 2015–2024, periodo fuera de muestra 2016–2024)
 
 | Mercado | Vía | ρ̄ Spearman por ventana (t NW) | % ventanas coherentes | ρ permutación exacta (p) |
 |---|---|---|---|---|
