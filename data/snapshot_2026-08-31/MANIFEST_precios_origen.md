@@ -1,6 +1,6 @@
 # Snapshot versionado — corrida definitiva del componente adaptativo IOWA
 
-Fecha de descarga (UTC): **2026-08-31T17:31:09Z**
+Fecha de descarga (UTC): **2026-08-31T17:31:09Z** (serie `PFCIBEST.CL`: 2026-09-27)
 Periodo cubierto: 2015-01-01 a 2025-01-02.
 
 Este directorio congela, con fecha y checksum, los insumos de datos usados en
@@ -14,24 +14,27 @@ de régimen —VIX y EPU—"*.
 | Archivo | Universo | Fuente | Emisores solicitados | Emisores retenidos | Regla de inclusión | SHA-256 (16) |
 |---|---|---|---|---|---|---|
 | `us_prices_snapshot.csv` | S&P 500 (EE. UU.) | Yahoo Finance (endpoint `chart`, precio ajustado por splits/dividendos) | 25 | 25/25 | cobertura ≥ 80 % del periodo | `906ca9dc8dcdfc22` |
-| `co_prices_snapshot.csv` | BVC (Colombia) | Yahoo Finance (sufijo `.CL`) | 18 | 17/18 | cobertura ≥ 80 % del periodo | `c82da5634df86f32` |
+| `co_prices_snapshot.csv` | BVC (Colombia) | Yahoo Finance (sufijo `.CL`) | 18 | 18/18 | cobertura ≥ 80 % del periodo | `b11ccd6b35449e40` |
 
 **Universo EE. UU. (25):** AAPL, MSFT, AMZN, GOOGL, META, NVDA, JPM, JNJ, V, PG,
 UNH, HD, MA, DIS, BAC, XOM, CVX, KO, PEP, WMT, MRK, ABBV, COST, ADBE, CSCO.
 
-**Universo Colombia (18 solicitados):** PFBCOLOM.CL, ECOPETROL.CL,
+**Universo Colombia (18 solicitados y retenidos):** PFCIBEST.CL, ECOPETROL.CL,
 GRUPOSURA.CL, PFGRUPSURA.CL, ISA.CL, CEMARGOS.CL, PFCEMARGOS.CL,
 GRUPOARGOS.CL, PFGRUPOARG.CL, BOGOTA.CL, PFAVAL.CL, CELSIA.CL, CORFICOLCF.CL,
 ETB.CL, NUTRESA.CL, TERPEL.CL, GEB.CL, PROMIGAS.CL.
 
-**Descartado (1):** `PFBCOLOM.CL` (Bancolombia preferencial) — Yahoo Finance
-reporta "No data found, symbol may be delisted" para todo el periodo. El
-emisor no se deslistó: tras su reorganización como Grupo Cibest, la fuente
-publica su historia desde 2015 bajo los símbolos vigentes `CIBEST.CL` y
-`PFCIBEST.CL`, que este universo no solicitó (diagnóstico en
-validacion-oe4, `scripts/diag_simbolos_bancolombia.py` y
-`results/diag_simbolos_bancolombia.csv`). La exclusión es una limitación del
-universo; las cifras se conservan sin rehacer las corridas.
+**Bancolombia (acción preferencial):** se incluye mediante `PFCIBEST.CL`, el
+símbolo vigente de Grupo Cibest tras la reorganización societaria de
+Bancolombia; la fuente ya no devuelve serie para el símbolo anterior
+(`PFBCOLOM.CL`) y publica la historia completa desde 2015 bajo el vigente
+(diagnóstico en validacion-oe4, `scripts/diag_simbolos_bancolombia.py`). La
+serie de `PFCIBEST.CL` se descargó el **2026-09-27** con el mismo endpoint,
+periodo y campos que el resto del universo (`scripts/incorporar_bancolombia.py`;
+respuesta cruda en `raw_PFCIBEST.CL.csv`, SHA-256 (16) `5237d28e16d82ade`) y se
+añadió como columna a `co_prices_snapshot.csv` y `co_volume_snapshot.csv`
+(SHA-256 (16) `b11ccd6b35449e40` y `fcad0b91f9763960`), con cobertura del
+100 % del periodo.
 
 **Nota de cobertura:** `PFCEMARGOS.CL` (Cementos Argos, acción preferencial)
 tiene datos solo hasta 2024-09-20 (≈97 % de cobertura) por una reorganización
