@@ -1,4 +1,4 @@
-"""fig_8_1_flujo.py — Figura 8.1 de la tesis: flujo de datos de repo_OWA v1.1.0.
+"""fig_8_1_flujo.py — Figura 8.1 de la tesis: flujo de datos de repo_OWA.
 Okabe-Ito, fondo blanco, 300 dpi, rótulos en español. Uso: python scripts/fig_8_1_flujo.py"""
 import os
 import matplotlib
@@ -8,8 +8,8 @@ from matplotlib.patches import FancyBboxPatch
 
 OK = {"naranja": "#E69F00", "celeste": "#56B4E9", "verde": "#009E73", "amarillo": "#F0E442",
       "azul": "#0072B2", "bermellon": "#D55E00", "purpura": "#CC79A7", "gris": "#999999"}
-fig, ax = plt.subplots(figsize=(12, 5.2), facecolor="white")
-ax.set_xlim(0, 12); ax.set_ylim(0, 5.2); ax.axis("off")
+fig, ax = plt.subplots(figsize=(12, 4.9), facecolor="white")
+ax.set_xlim(0, 12); ax.set_ylim(0, 4.9); ax.axis("off")
 
 def caja(x, y, w, h, texto, color, fs=9):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.03,rounding_size=0.08",
@@ -28,11 +28,10 @@ caja(8.2, 2.0, 1.85, 1.2, "backtest\nventanas rodantes\ncostos 10 pb\n1/N · Mar
 caja(10.3, 2.0, 1.6, 1.2, "inference\nNewey-West\npermutación · DM", OK["purpura"], 8.5)
 flecha(2.0, 2.6, 2.6, 2.6)
 flecha(2.0, 0.85, 5.3, 0.85)
-ax.text(3.65, 0.95, "orness efectivo (§8.4)", ha="center", fontsize=7.5)
+ax.text(3.65, 0.95, "orness efectivo (sección 8.4)", ha="center", fontsize=7.5)
 flecha(4.6, 2.9, 5.3, 4.1); flecha(4.6, 2.3, 5.3, 1.3)
 flecha(7.6, 4.1, 8.4, 3.2); flecha(7.6, 1.1, 8.4, 2.0)
 flecha(10.05, 2.6, 10.3, 2.6)
-ax.text(6.0, 5.0, "Flujo reproducible de repo_OWA (versión 1.1.0)", ha="center", fontsize=12, weight="bold")
 out = os.path.join(os.path.dirname(__file__), "..", "figures", "fig_8_1_flujo.png")
 fig.savefig(out, dpi=300, facecolor="white", bbox_inches="tight")
 print(out)
