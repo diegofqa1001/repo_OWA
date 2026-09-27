@@ -2,6 +2,7 @@
  "mercado": "CO",
  "anclas": "v1",
  "activos": [
+  "PFCIBEST.CL",
   "ECOPETROL.CL",
   "GRUPOSURA.CL",
   "PFGRUPSURA.CL",
@@ -20,7 +21,7 @@
   "GEB.CL",
   "PROMIGAS.CL"
  ],
- "n_dias": 2298,
+ "n_dias": 2299,
  "inicio": "2015-01-02",
  "fin": "2024-12-30",
  "n_ventanas": 97,
