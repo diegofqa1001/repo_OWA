@@ -29,15 +29,19 @@ ejecutan como análisis de sensibilidad.
 
 ## Resultados principales (anclas por octiles, neto de 10 pb por rotación; datos 2015–2024, periodo fuera de muestra 2016–2024)
 
+Universos: 25 emisores del S&P 500 (2 516 días) y 18 emisores de la BVC (2 299 días), con
+Bancolombia incluida mediante el símbolo vigente de Grupo Cibest para su acción preferencial
+(PFCIBEST.CL); detalle en `data/snapshot_2026-08-31/MANIFEST.md`.
+
 | Mercado | Vía | ρ̄ Spearman por ventana (t NW) | % ventanas coherentes | ρ permutación exacta (p) |
 |---|---|---|---|---|
 | EE. UU. (107 ventanas) | Criterios | −0,583 (−11,0) | 11,2 % | −0,929 (0,002) |
 | EE. UU. | Espectral | +0,766 (49,9) | 99,1 % | +0,762 (0,037) |
-| Colombia (97 ventanas) | Criterios | −0,211 (−3,0) | 33,0 % | −0,905 (0,005) |
-| Colombia | Espectral | +0,655 (16,7) | 90,7 % | +0,833 (0,015) |
+| Colombia (97 ventanas) | Criterios | −0,344 (−4,7) | 26,8 % | −0,857 (0,011) |
+| Colombia | Espectral | +0,654 (18,1) | 91,8 % | +0,833 (0,015) |
 
 Componente adaptativo, ventanas con estrés activo: reducción media de volatilidad de
-2,72 pp (EE. UU., p < 0,001) y 2,08 pp (Colombia, p = 0,003), sin pérdida significativa de
+2,72 pp (EE. UU., p < 0,001) y 2,39 pp (Colombia, p = 0,002), sin pérdida significativa de
 coherencia. Tablas completas en `results/cap5/` y `results/iowa/`.
 
 ## Reproducir
