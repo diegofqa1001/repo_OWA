@@ -7,7 +7,7 @@ Escribe en results/cap5/:
   tabla_5_3_dm.csv           Diebold-Mariano (HLN) de los contrastes declarados
   dispersion_resumen.csv     estabilidad del multi-start en el régimen no cóncavo
 y en figures/: fig_5_1_coherencia.png, fig_5_2_volatilidad_perfil.png,
-fig_5_3_vias_US.png (Okabe-Ito, fondo blanco, 300 dpi, rótulos en español).
+fig_5_3_vias_US.png (azul marino y grises, fondo blanco, 300 dpi, rótulos en español).
 
 Uso: python scripts/analyze_cap5.py
 """
@@ -25,7 +25,7 @@ RES = os.path.join(os.path.dirname(__file__), "..", "results", "cap5")
 FIG = os.path.join(os.path.dirname(__file__), "..", "figures"); os.makedirs(FIG, exist_ok=True)
 ES = {"Guardian": "Guardián", "Sentinel": "Centinela", "Pragmatist": "Pragmático", "Analyst": "Analista",
       "Strategist": "Estratega", "Adventurer": "Aventurero", "Innovator": "Innovador", "Visionary": "Visionario"}
-OK = ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000"]
+OK = ["#8C8C8C", "#9AACC2", "#4F6D8F", "#B8AE9C", "#1F3A5F", "#3F3F3F", "#8A7D72", "#000000"]
 coma = FuncFormatter(lambda x, _: f"{x:g}".replace(".", ","))
 plt.rcParams.update({"font.family": "DejaVu Sans", "axes.facecolor": "white", "figure.facecolor": "white"})
 

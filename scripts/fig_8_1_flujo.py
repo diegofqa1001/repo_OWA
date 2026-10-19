@@ -6,8 +6,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 
-OK = {"naranja": "#E69F00", "celeste": "#56B4E9", "verde": "#009E73", "amarillo": "#F0E442",
-      "azul": "#0072B2", "bermellon": "#D55E00", "purpura": "#CC79A7", "gris": "#999999"}
+OK = {"naranja": "#8C8C8C", "celeste": "#9AACC2", "verde": "#4F6D8F", "amarillo": "#B8AE9C",
+      "azul": "#1F3A5F", "bermellon": "#3F3F3F", "purpura": "#8A7D72", "gris": "#999999"}
 fig, ax = plt.subplots(figsize=(12, 4.9), facecolor="white")
 ax.set_xlim(0, 12); ax.set_ylim(0, 4.9); ax.axis("off")
 

@@ -2,7 +2,7 @@
 fig_iowa.py — Figuras 4.2 y 8.2-8.4 de la tesis y descriptivos que las acompañan.
 
 Lee los resultados versionados (results/iowa y results/cap5, anclas por octiles) y
-escribe en figures/ (Okabe-Ito, fondo blanco, 300 dpi, rótulos en español, coma
+escribe en figures/ (azul marino y grises, fondo blanco, 300 dpi, rótulos en español, coma
 decimal):
   fig_4_2_espectros_octiles.png   espectros psi de los ocho perfiles (n = 7)
   fig_8_2_orness_efectivo_US.png  índice de estrés y orness efectivo por perfil en
@@ -31,8 +31,8 @@ RES, CAP5, FIG = f"{BASE}/results/iowa", f"{BASE}/results/cap5", f"{BASE}/figure
 os.makedirs(FIG, exist_ok=True)
 ES = {"Guardian": "Guardián", "Sentinel": "Centinela", "Pragmatist": "Pragmático", "Analyst": "Analista",
       "Strategist": "Estratega", "Adventurer": "Aventurero", "Innovator": "Innovador", "Visionary": "Visionario"}
-OK = {"naranja": "#E69F00", "celeste": "#56B4E9", "verde": "#009E73", "amarillo": "#F0E442",
-      "azul": "#0072B2", "bermellon": "#D55E00", "purpura": "#CC79A7", "negro": "#000000"}
+OK = {"naranja": "#8C8C8C", "celeste": "#9AACC2", "verde": "#4F6D8F", "amarillo": "#B8AE9C",
+      "azul": "#1F3A5F", "bermellon": "#3F3F3F", "purpura": "#8A7D72", "negro": "#000000"}
 COL_PERFIL = dict(zip(PERFILES, [OK["azul"], OK["celeste"], OK["verde"], OK["amarillo"],
                                  OK["naranja"], OK["bermellon"], OK["purpura"], OK["negro"]]))
 COL_REG = {"calma": OK["verde"], "normal": OK["celeste"], "estres": OK["naranja"], "crisis": OK["bermellon"]}

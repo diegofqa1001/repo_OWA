@@ -29,7 +29,7 @@ BASE = os.path.join(os.path.dirname(__file__), "..")
 RES, CAP5, FIG = f"{BASE}/results/iowa", f"{BASE}/results/cap5", f"{BASE}/figures"
 ES = {"Guardian": "Guardián", "Sentinel": "Centinela", "Pragmatist": "Pragmático", "Analyst": "Analista",
       "Strategist": "Estratega", "Adventurer": "Aventurero", "Innovator": "Innovador", "Visionary": "Visionario"}
-OK = ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#000000"]
+OK = ["#8C8C8C", "#9AACC2", "#4F6D8F", "#B8AE9C", "#1F3A5F", "#3F3F3F", "#8A7D72", "#000000"]
 coma = FuncFormatter(lambda x, _: f"{x:g}".replace(".", ","))
 orn = np.array([ORNESS_OCTILES[p] for p in PERFILES])
 filas = []
