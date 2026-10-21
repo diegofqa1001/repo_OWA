@@ -52,6 +52,7 @@ pytest -q                                   # pruebas del núcleo
 python scripts/run_cap5.py                  # Cap. 5: 2 mercados x 2 anclas (≈ 1 h por mercado)
 python scripts/analyze_cap5.py              # Tablas 5.1-5.3 y Figuras 5.1-5.3
 python scripts/analyze_cap5_complementos.py # coherencia en rentabilidad y caída; concentración espectral
+python figures_article/make_a3_figures.py   # Figuras 1-3 del artículo derivado (inglés)
 python scripts/run_iowa.py                  # §8.4: corrida adaptativa (≈ 40 min por mercado)
 python scripts/analyze_iowa.py              # pruebas del §8.4 y figura del orness efectivo
 python scripts/fig_iowa.py                  # Figuras 4.2 y 8.2-8.4 y sus descriptivos
@@ -78,6 +79,13 @@ cóncavo. Los resultados publicados en `results/` son los de referencia de la te
 - Resultados y figuras versionados (antes excluidos por `.gitignore`).
 - Permutación exacta sobre 8! reasignaciones y Diebold-Mariano con corrección HLN.
 - Componente adaptativo implementado sobre la vía espectral.
+
+## Artículo derivado
+
+*Risk-order inversion in OWA-based portfolio recommendation and its spectral correction*
+(D. F. Quintero-Avellaneda, en evaluación). Todas sus cifras provienen de `results/cap5/`
+(`run_cap5.py`, `analyze_cap5.py`, `analyze_cap5_complementos.py`) y sus tres figuras se generan
+con `figures_article/make_a3_figures.py` en paleta azul marino y grises (.png y .tif a 600 ppp, .eps).
 
 ## Licencia y cita
 
