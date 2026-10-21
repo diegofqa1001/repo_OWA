@@ -87,6 +87,15 @@ cóncavo. Los resultados publicados en `results/` son los de referencia de la te
 (`run_cap5.py`, `analyze_cap5.py`, `analyze_cap5_complementos.py`) y sus tres figuras se generan
 con `figures_article/make_a3_figures.py` en paleta azul marino y grises (.png y .tif a 600 ppp, .eps).
 
+## Artículo derivado sobre adaptación del orness
+
+*Who should adapt the investor's risk attitude? Regime-induced orness and investor-declared
+profile updating in OWA-based portfolio recommendation* (en evaluación). Sus cifras del régimen
+provienen de `results/iowa/` (`run_iowa.py`, `analyze_iowa.py`, `analyze_a4_compression.py`,
+que escribe `compresion_a4.json`) y sus Figuras 1 y 2 se generan con
+`figures_article_a4/make_a4_figures.py`. La Figura 3 y la tabla de migraciones están en el
+repositorio validacion-oe4.
+
 ## Licencia y cita
 
 DOI de concepto (resuelve a la versión más reciente): [10.5281/zenodo.20695172](https://doi.org/10.5281/zenodo.20695172).

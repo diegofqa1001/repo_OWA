@@ -1,0 +1,84 @@
+{
+ "US": {
+  "n_activas": 38,
+  "n_rho_negativa_adaptativa": 2,
+  "n_rho_negativa_estatica": 1,
+  "ventana_max_activacion": {
+   "fecha": "2020-04-06",
+   "activacion": 0.816398816937131,
+   "rho_adaptativa": -0.9285714285714288,
+   "rho_estatica": 0.7619047619047621,
+   "orness_efectivo": {
+    "Guardian": 0.0625,
+    "Sentinel": 0.1407,
+    "Pragmatist": 0.1789,
+    "Analyst": 0.2172,
+    "Strategist": 0.2554,
+    "Adventurer": 0.2937,
+    "Innovator": 0.3319,
+    "Visionary": 0.3702
+   },
+   "vol_adaptativa_pct": {
+    "Guardian": 25.13,
+    "Sentinel": 24.3,
+    "Pragmatist": 24.1,
+    "Analyst": 23.99,
+    "Strategist": 23.87,
+    "Adventurer": 23.79,
+    "Innovator": 23.75,
+    "Visionary": 23.84
+   },
+   "vol_estatica_pct": {
+    "Guardian": 25.13,
+    "Sentinel": 24.07,
+    "Pragmatist": 23.77,
+    "Analyst": 24.79,
+    "Strategist": 38.62,
+    "Adventurer": 44.9,
+    "Innovator": 44.91,
+    "Visionary": 44.73
+   }
+  }
+ },
+ "CO": {
+  "n_activas": 31,
+  "n_rho_negativa_adaptativa": 5,
+  "n_rho_negativa_estatica": 2,
+  "ventana_max_activacion": {
+   "fecha": "2018-12-24",
+   "activacion": 0.7845792289293724,
+   "rho_adaptativa": -0.5000000000000001,
+   "rho_estatica": 0.6904761904761906,
+   "orness_efectivo": {
+    "Guardian": 0.0625,
+    "Sentinel": 0.1425,
+    "Pragmatist": 0.1841,
+    "Analyst": 0.2258,
+    "Strategist": 0.2674,
+    "Adventurer": 0.309,
+    "Innovator": 0.3507,
+    "Visionary": 0.3923
+   },
+   "vol_adaptativa_pct": {
+    "Guardian": 10.12,
+    "Sentinel": 8.78,
+    "Pragmatist": 8.57,
+    "Analyst": 8.46,
+    "Strategist": 8.42,
+    "Adventurer": 8.41,
+    "Innovator": 8.47,
+    "Visionary": 8.57
+   },
+   "vol_estatica_pct": {
+    "Guardian": 10.12,
+    "Sentinel": 8.56,
+    "Pragmatist": 8.55,
+    "Analyst": 9.9,
+    "Strategist": 14.89,
+    "Adventurer": 12.48,
+    "Innovator": 12.48,
+    "Visionary": 12.48
+   }
+  }
+ }
+}
