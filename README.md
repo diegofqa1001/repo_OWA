@@ -1,4 +1,4 @@
-# Motor de recomendación OWA adaptativo al perfil conductual — v1.2.0
+# Motor de recomendación OWA adaptativo al perfil conductual — v1.3.1
 
 [![License: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](LICENSE-CONTENT.md)

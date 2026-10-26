@@ -45,7 +45,7 @@ box(2, 45, "Criteria route",
     "Risk-order inversion: ρ = −0.93 (US), −0.86 (CO)", GREY_L, GREY_D, GREY_D)
 box(53, 45, "Spectral route (PR-WOWA)",
     "Same orness on the ordered portfolio outcomes\n= spectral risk measure, coherent for\n"
-    "cautious profiles, LP-solvable, nests CVaR\n\nRisk increases with orness in\n"
+    "cautious profiles, LP-solvable, nests CVaR\n\nRisk positively rank-correlated with orness\nin "
     "99% (US) and 92% (CO) of out-of-sample windows", FILL, NAVY, NAVY)
 ax.annotate("", xy=(52.3, 22), xytext=(47.7, 22), arrowprops=dict(arrowstyle="-|>", color=NAVY, lw=1.4))
 ax.text(50, 24.5, "same\norness", ha="center", va="bottom", fontsize=7.5, color=NAVY)
